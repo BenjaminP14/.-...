@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Mujer Hermosa</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif; /* Cambiado a una fuente más moderna */
+            text-align: center;
+            background: linear-gradient(to bottom right, #ffc0cb, #ffe4e1, #fffacd); /* Fondo degradado más suave y romántico */
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 100vh; /* Asegura que el degradado cubra toda la altura */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Importar fuente de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
+
+
+        .heart {
+            position: absolute;
+            width: 25px; /* Corazones un poco más grandes */
+            height: 25px;
+            background-color: rgba(255, 105, 180, 0.6); /* Rosa más vivo y semi-transparente */
+            transform: rotate(-45deg);
+            animation: floatHearts 12s infinite ease-in-out; /* Animación más lenta */
+            opacity: 0;
+            border-radius: 50% 50% 0 0;
+            box-shadow: 0 0 8px rgba(255, 105, 180, 0.4); /* Sombra más pronunciada */
+            z-index: 0; /* Asegura que estén detrás del contenido principal */
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: rgba(255, 105, 180, 0.6);
+            border-radius: 50%;
+        }
+        .heart::before {
+            left: -12.5px; /* Ajuste para el tamaño del corazón */
+        }
+        .heart::after {
+            top: -12.5px; /* Ajuste para el tamaño del corazón */
+        }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(120vh) rotate(-45deg); opacity: 0; }
+            25% { opacity: 0.8; }
+            75% { opacity: 0.8; }
+            100% { transform: translateY(-50px) rotate(-45deg); opacity: 0; }
+        }
+
+        .heart:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 15%; animation-delay: 2s; background-color: rgba(255, 192, 203, 0.6); } /* Rosa claro */
+        .heart:nth-child(3) { left: 25%; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 35%; animation-delay: 6s; background-color: rgba(255, 192, 203, 0.6); }
+        .heart:nth-child(5) { left: 45%; animation-delay: 8s; }
+        .heart:nth-child(6) { left: 55%; animation-delay: 10s; background-color: rgba(255, 192, 203, 0.6); }
+        .heart:nth-child(7) { left: 65%; animation-delay: 12s; }
+        .heart:nth-child(8) { left: 75%; animation-delay: 14s; background-color: rgba(255, 192, 203, 0.6); }
+        .heart:nth-child(9) { left: 85%; animation-delay: 16s; }
+        .heart:nth-child(10) { left: 95%; animation-delay: 18s; } /* Añadido un décimo corazón */
+
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.95); /* Fondo casi opaco para el contenedor */
+            padding: 40px; /* Más padding para un look más "premium" */
+            border-radius: 20px; /* Bordes más redondeados */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* Sombra más profunda */
+            max-width: 700px; /* Un poco más ancho */
+            margin: auto; /* Centrado vertical y horizontal */
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
+        }
+        .container:hover {
+            transform: translateY(-5px); /* Pequeño levantamiento al pasar el ratón */
+        }
+
+        h1 {
+            color: #ff8c00; /* Naranja oscuro, vibrante y cálido */
+            font-family: 'Dancing Script', cursive; /* Fuente cursiva para un toque personal */
+            font-size: 3.5em; /* Tamaño más grande para el título */
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+        }
+        p {
+            font-size: 1.6em;
+            color: #8b0000; /* Rojo oscuro para el "Hermosas" */
+            font-family: 'Montserrat', sans-serif; /* Mantener la misma fuente o una contrastante */
+            font-style: italic;
+            margin-top: 10px;
+            margin-bottom: 25px; /* Espacio antes de la imagen */
+        }
+        .flower-image {
+            max-width: 95%; /* Un poco más grande */
+            height: auto;
+            border-radius: 15px; /* Bordes de imagen más redondeados */
+            margin-top: 20px;
+            border: 6px solid #ffcc00; /* Borde amarillo brillante más grueso */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Sombra más pronunciada para la imagen */
+            object-fit: contain;
+            transition: transform 0.3s ease-in-out; /* Animación al pasar el ratón */
+        }
+        .flower-image:hover {
+            transform: scale(1.02); /* Ligeramente más grande al pasar el ratón */
+        }
+
+        .dedication-text {
+            font-family: 'Dancing Script', cursive; /* Fuente cursiva para la dedicación */
+            font-size: 1.8em; /* Tamaño grande para el texto de dedicación */
+            color: #dc143c; /* Rojo carmesí para un toque romántico */
+            margin-top: 30px; /* Espacio superior para separar de la imagen */
+            line-height: 1.4; /* Espaciado de línea para mejor lectura */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div> <div class="container">
+        <h1>¡Estas flores amarillas son para mi mujer!</h1>
+        <p>Hermosa</p>
+        <img class="flower-image" src="c:\Users\benja\Downloads\𖹭.jpeg" alt="Ilustración de flores amarillas con el texto 'Flores amarillas para ti <3 TQM'">
+        <div class="dedication-text">
+            Te quiero mucho mi wawa y eres la mujer que quiero toda mi vida &hearts;
+        </div>
+    </div>
+
+</body>
+</html>
